@@ -1,0 +1,58 @@
+    1  history
+    2  sudo useradd -u 1234 user1
+    3  sudo groupadd students
+    4  grep user1 /etc/passwd
+    5  grep user1 /etc/group
+    6  sudo usermod -G students user1
+    7  grep user1 /etc/group
+    8  sudo chage -M 90 user1
+    9  id user1
+   10  sudo chage -l user1
+   11  sudo find / -type f -perm -4000 2>/dev/null
+   12  ps -aux
+   13  ps -eo pid, user, uid, euid, ruid, comm | awk '$4 == 0 && $5 != 0'
+   14  ps -eo pid,user,uid,euid,ruid,comm | awk '$4 == 0 && $5 != 0'
+   15  ls -l $(which fusermount3)
+   16  cat /etc/shadow
+   17  which cat
+   18  cp /usr/bin/cat ~/my_cat
+   19  ll
+   20  sudo chown root:root my_cat 
+   21  ll
+   22  sudo chmod u+s my_cat 
+   23  ll
+   24  my_cat /etc/shadow
+   25  ./my_cat /etc/shadow
+   26  chown joha my_cat 
+   27  which chown
+   28  cp /usr/bin/chown ~/my_chown
+   29  ll
+   30  sudo setcap cap_chown=ep ./my_chown 
+   31  getcap ./my_chown 
+   32  ./my_chown joha:joha my_cat
+   33  ll
+   34  touch test_for_chown
+   35  ll
+   36  ./my_chown root test_for_chown 
+   37  ll
+   38  ./my_chown root:root test_for_chown 
+   39  ll
+   40  ./my_chown joha:joha test_for_chown 
+   41  ll
+   42  timedatectl
+   43  which timedatectl
+   44  su - user1
+   45  passwd user1
+   46  sudo passwd user1
+   47  su - user1
+   48   timedatectl set-ntp no 
+   49  timedatectl
+   50  groups joha
+   51  su - user1
+   52  sudo visudo
+   53  echo $EDITOR
+   54  echo $VISUAL
+   55  sudo visudo
+   56  su - user1
+   57  374927
+   58  history > ~/history.out
